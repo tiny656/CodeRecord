@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 using namespace std;
 
 #if defined(_MSC_VER) || defined(__BORLANDC__)
@@ -9,21 +9,21 @@ typedef unsigned long long uint64;
 typedef signed long long int64;
 #endif
 
-/*---------------¾ØÕóµÄ¿ìËÙÃİBEGIN---------------*/
-//ÕâÀï¸ü¸Ä¾ØÕó´óĞ¡
+/*---------------çŸ©é˜µçš„å¿«é€Ÿå¹‚BEGIN---------------*/
+//è¿™é‡Œæ›´æ”¹çŸ©é˜µå¤§å°
 const int MAXN = 2;
 const int MOD = 20121223;
 
-//¾ØÕó
+//çŸ©é˜µ
 typedef  struct{
 	int  m[MAXN][MAXN];
 }  Matrix;
 
-//Ô¤ÖÃµ¥Î»¾ØÕó
+//é¢„ç½®å•ä½çŸ©é˜µ
 Matrix I2 = { 1, 0 , 0, 1 };
 //Matrix I3 = { 1, 0, 0, 0, 1, 0, 0, 0, 1 };
 
-//¾ØÕó³Ë·¨
+//çŸ©é˜µä¹˜æ³•
 Matrix MatrixMul(const Matrix &a, const Matrix &b) {
 	int i, j, k;
 	Matrix c;
@@ -37,11 +37,11 @@ Matrix MatrixMul(const Matrix &a, const Matrix &b) {
 	return c;
 }
 
-//¾ØÕó¿ìËÙÃİÇó½â m^n % MOD
+//çŸ©é˜µå¿«é€Ÿå¹‚æ±‚è§£ m^n % MOD
 Matrix QuickPow(Matrix m, int64 n)
 {
 	Matrix ans = I2;
-	//¿ìËÙÃİ
+	//å¿«é€Ÿå¹‚
 	assert(n >= 0);
 	while (n >= 1) {
 		if (n & 1) ans = MatrixMul(ans, m);
@@ -51,7 +51,7 @@ Matrix QuickPow(Matrix m, int64 n)
 	return ans;
 }
 
-//´òÓ¡¾ØÕó
+//æ‰“å°çŸ©é˜µ
 void Print(const Matrix &m) {
 	for (int i = 0; i < MAXN; i++) {
 		for (int j = 0; j < MAXN; j++) {
@@ -60,9 +60,9 @@ void Print(const Matrix &m) {
 		printf("\n");
 	}
 }
-/*---------------¾ØÕó¿ìËÙÃİEND---------------*/
+/*---------------çŸ©é˜µå¿«é€Ÿå¹‚END---------------*/
 
-/*---------------ÕûÊı¿ìËÙÃİBEGIN---------------*/
+/*---------------æ•´æ•°å¿«é€Ÿå¹‚BEGIN---------------*/
 // m^n % k
 int QuickPow(int64 m, int64 n, const int64 &k) {
 	int64 ans = 1;
@@ -73,7 +73,7 @@ int QuickPow(int64 m, int64 n, const int64 &k) {
 	}
 	return ans;
 }
-/*---------------ÕûÊı¿ìËÙÃİEND---------------*/
+/*---------------æ•´æ•°å¿«é€Ÿå¹‚END---------------*/
 
 
 
