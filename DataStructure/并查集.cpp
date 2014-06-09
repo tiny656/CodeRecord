@@ -12,8 +12,8 @@ inline void unionSet(int x, int y) {
 	if (fx != fy) {
 		if (rank[fx] > rank[fy]) fa[fy] = fx;
     	else {
-	        fa[fx] = fy;
-	        if (rank[fx] == rank[fy]) rank[fy]++;
+	       	fa[fx] = fy;
+	       	if (rank[fx] == rank[fy]) rank[fy]++;
     	}
 	}
 }
