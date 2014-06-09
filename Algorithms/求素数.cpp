@@ -1,19 +1,19 @@
-
-1.Çó·¨
-(1)¸ù¾ÝËØÊýµÄ¶¨Òå£¬ºÜÃ÷ÏÔ£¬Èç¹ûÒ»¸öÊýÊÇËØÊý<==>ËüµÄÒò×ÓÖ»°üº¬1ºÍËü±¾Éí¡£
-Òò´Ë¿ÉÒÔ¸ù¾ÝÅÐ±ðÄ³¸öÊýµÄÒò×ÓµÄ·½·¨À´ÅÐ¶ÏÆäÊÇ·ñÊÇËØÊý¡£   
+ï»¿
+1.æ±‚æ³•
+(1)æ ¹æ®ç´ æ•°çš„å®šä¹‰ï¼Œå¾ˆæ˜Žæ˜¾ï¼Œå¦‚æžœä¸€ä¸ªæ•°æ˜¯ç´ æ•°<==>å®ƒçš„å› å­åªåŒ…å«1å’Œå®ƒæœ¬èº«ã€‚
+å› æ­¤å¯ä»¥æ ¹æ®åˆ¤åˆ«æŸä¸ªæ•°çš„å› å­çš„æ–¹æ³•æ¥åˆ¤æ–­å…¶æ˜¯å¦æ˜¯ç´ æ•°ã€‚   
 int isPrime(int n) {
 	int i;
 	for(i = 2; i <= (int)sqrt((double)n); ++i) {
-		//Èç¹ûn´æÔÚÆäËüÒò×Ó,Ôò±Ø¶¨²»ÊÇËØÊý
+		//å¦‚æžœnå­˜åœ¨å…¶å®ƒå› å­,åˆ™å¿…å®šä¸æ˜¯ç´ æ•°
 		if (n % i == 0) return 0; 
 	}
 	return 1;
 }
 
 
-(2). ´ò±íÇóËØÊý 1-maxnµÄËØÊý.
-¶ÔÓÚÒ»¸öÊýn£¬Èç¹ûnÊÇËØÊý£¬ÄÇÃ´2*n£¬3*n£¬4*n£¬±Ø¶¨²»ÊÇËØÊý¡£
+(2). æ‰“è¡¨æ±‚ç´ æ•° 1-maxnçš„ç´ æ•°.
+å¯¹äºŽä¸€ä¸ªæ•°nï¼Œå¦‚æžœnæ˜¯ç´ æ•°ï¼Œé‚£ä¹ˆ2*nï¼Œ3*nï¼Œ4*nï¼Œå¿…å®šä¸æ˜¯ç´ æ•°ã€‚
 const int maxn = xxxxx;
 int prime[maxn/5];
 bool isPrime[maxn + 5];
@@ -24,7 +24,7 @@ void init() {
 	isPrime[1] = isPrime[1] = 1;
 	for (i = 2; i <= maxn; ++i) {
 	    if (!isPrime[i]) {
-	        for (j = i + i; j <= maxn; j+=i) { //¼Ó·¨ÔËËã
+	        for (j = i + i; j <= maxn; j+=i) { //åŠ æ³•è¿ç®—
 	            isPrime[j] = 1;
 	        }
 	    }
@@ -39,9 +39,9 @@ void init() {
 
 
 
-2. ´ò±íÇó1-maxnµÄÒò×Ó¸öÊý
+2. æ‰“è¡¨æ±‚1-maxnçš„å› å­ä¸ªæ•°
 int d[maxn + 5];
-for (i = 1; i <= maxn; i++) { //Èç¹ûÎªi+=2£¬¾ÍÊÇ1,3,5...ÆæÊýÒò×Ó¸öÊý£¬Å¼ÊýÒò×ÓÀàËÆ
+for (i = 1; i <= maxn; i++) { //å¦‚æžœä¸ºi+=2ï¼Œå°±æ˜¯1,3,5...å¥‡æ•°å› å­ä¸ªæ•°ï¼Œå¶æ•°å› å­ç±»ä¼¼
     for (j = i; j <= maxn; j+=i) {
         d[j]++;
     }

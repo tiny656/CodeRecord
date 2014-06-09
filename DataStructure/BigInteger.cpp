@@ -1,4 +1,4 @@
-#include <iostream> 
+ï»¿#include <iostream> 
 #include <cstdio> 
 #include <cstring>
 #include <string>
@@ -12,12 +12,12 @@ public:
 	int s[MAXN];  
 	int len;  
 
-	void cleanLeadZero()	  // È¥³ıÇ°µ¼Áã  
+	void cleanLeadZero()	  // å»é™¤å‰å¯¼é›¶  
 	{ 
 		while (len > 1 && !s[len - 1]) len--;  
 	}  
 	
-	void multiplyTen(int n)   // ³ËÒÔ10µÄn´Î·½  
+	void multiplyTen(int n)   // ä¹˜ä»¥10çš„næ¬¡æ–¹  
 	{  
 		int i;  
 		if (n > len) 
@@ -34,7 +34,7 @@ public:
 		}  
 	}	  
 	
-	void divisionTen(int n)   // ³ıÒÔ10µÄn´Î·½  
+	void divisionTen(int n)   // é™¤ä»¥10çš„næ¬¡æ–¹  
 	{  
 		if (n > 0) 
 		{  
@@ -51,9 +51,9 @@ public:
 		}  
 	} 
 		
-	string str() const		// ½«½á¹û×ª»»³É×Ö·û´®  
+	string str() const		// å°†ç»“æœè½¬æ¢æˆå­—ç¬¦ä¸²  
 	{  
-		string res = "";  // Ã¿¸öÎ»µÄÊıÄæĞòÌí¼Óµ½strÄ©Î²¡£  
+		string res = "";  // æ¯ä¸ªä½çš„æ•°é€†åºæ·»åŠ åˆ°stræœ«å°¾ã€‚  
 		for (int i = 0;  i < len; i++) 
 		{  
 			res = (char)(s[i] + '0') + res;  
@@ -62,7 +62,7 @@ public:
 		return res;  
 	}
 			
-	BigNumber()   // ¹¹Ôìº¯Êı  
+	BigNumber()   // æ„é€ å‡½æ•°  
 	{  
 		memset(s, 0, sizeof(s));  
 		len = 1;  
@@ -78,7 +78,7 @@ public:
 		*this = num;  
 	}  
 		
-	BigNumber getSub(int n) const   // ½ØÈ¡ÕûÊıµÄÇ°nÎ»Êı£¨ÀıÈç1234434 µ÷ÓÃ getSub(3)µÄ»°µÃµ½µÄ½á¹ûÊÇ123£©  
+	BigNumber getSub(int n) const   // æˆªå–æ•´æ•°çš„å‰nä½æ•°ï¼ˆä¾‹å¦‚1234434 è°ƒç”¨ getSub(3)çš„è¯å¾—åˆ°çš„ç»“æœæ˜¯123ï¼‰  
 	{  
 		BigNumber c;  
 		c.len = 0;  
@@ -89,10 +89,10 @@ public:
 		return c;  
 	}		
 		
-	BigNumber operator = (const char *num)   // ÖØÔØ¸³ÖµÔËËã·û  
+	BigNumber operator = (const char *num)   // é‡è½½èµ‹å€¼è¿ç®—ç¬¦  
 	{  
 		len = strlen(num);  
- 								 // ÕûÊıÔÚsÊı×éÖĞÊÇÄæĞò´æ·ÅµÄ£¨Èç£º"456" ÔÚs Êı×éÖĞÊÇs[0] = 6, s[1] = 5, s[2] = 4£©  
+ 								 // æ•´æ•°åœ¨sæ•°ç»„ä¸­æ˜¯é€†åºå­˜æ”¾çš„ï¼ˆå¦‚ï¼š"456" åœ¨s æ•°ç»„ä¸­æ˜¯s[0] = 6, s[1] = 5, s[2] = 4ï¼‰  
 		for (int i = 0; i < len; i++) 
 		{  
 			s[i] = num[len - i - 1] - '0';  
@@ -108,7 +108,7 @@ public:
 		return *this;  
 	}   
 	
-	// ÖØÔØ¼Ó¼õ³Ë³ı  
+	// é‡è½½åŠ å‡ä¹˜é™¤  
 	BigNumber operator + (const BigNumber &) const;  
 	BigNumber operator - (const BigNumber &) const;  
 	BigNumber operator * (const BigNumber &) const;  
@@ -118,16 +118,16 @@ public:
 	BigNumber operator += (const BigNumber &);  
 	BigNumber operator *= (const BigNumber &);  
 	BigNumber operator /= (const BigNumber &);  
-	// ÖØÔØ±È½ÏÔËËã·û  
+	// é‡è½½æ¯”è¾ƒè¿ç®—ç¬¦  
 	bool operator < (const BigNumber &) const;  
 	bool operator > (const BigNumber &) const;  
 	bool operator <= (const BigNumber &) const;  
 	bool operator >= (const BigNumber &) const;  
 	bool operator == (const BigNumber &) const;  
-	// ÖØÔØÊäÈëÊä³öÁ÷  
+	// é‡è½½è¾“å…¥è¾“å‡ºæµ  
 	friend istream & operator >> (istream &, BigNumber &);  
 	friend ostream & operator << (ostream &, BigNumber &);		
-};  //Àà½áÊø
+};  //ç±»ç»“æŸ
 
 
   
@@ -135,7 +135,7 @@ BigNumber BigNumber::operator + (const BigNumber & x) const  // ++++++++++++++++
 {  
 	BigNumber r;  
 	r.len = 0;  
-	// up ÊÇÓÃÀ´±£³Ö½øÎ»µÄ  
+	// up æ˜¯ç”¨æ¥ä¿æŒè¿›ä½çš„  
 	int i, up;  
 	int maxLen = max(len, x.len);  
 	for (i = 0, up = 0; up || i < maxLen; i++) 
@@ -146,19 +146,19 @@ BigNumber BigNumber::operator + (const BigNumber & x) const  // ++++++++++++++++
 		up = temp / 10;  
 		r.s[r.len++] = temp % 10;  
 	}  
-	// È¥³ıÇ°µ¼Áã  
+	// å»é™¤å‰å¯¼é›¶  
 	r.cleanLeadZero();  
 	return r;  
 }  
   
-// ¼õ·¨ÔÚÊ¹ÓÃÊ±Òª×¢ÒâÔÚ¼ÆËãa - bÊ±ÒªÈ·±£a >= b;  
-// Èç¹ûa < b Ôò¼ÆËã ÏÈÊä³öÒ»¸ö'-' ÔÙÊä³ö b - a µÄ½á¹û  
+// å‡æ³•åœ¨ä½¿ç”¨æ—¶è¦æ³¨æ„åœ¨è®¡ç®—a - bæ—¶è¦ç¡®ä¿a >= b;  
+// å¦‚æœa < b åˆ™è®¡ç®— å…ˆè¾“å‡ºä¸€ä¸ª'-' å†è¾“å‡º b - a çš„ç»“æœ  
 BigNumber BigNumber::operator - (const BigNumber & b) const   // -------------------------------
 {  
 	BigNumber c;  
 	c.len = 0;  
 	int i;  
-	// ÓÃÀ´±£´æÍËÎ»  
+	// ç”¨æ¥ä¿å­˜é€€ä½  
 	int down;  
 	for (i = 0, down = 0; i < len; i++)   
 	{  
@@ -203,33 +203,33 @@ BigNumber BigNumber::operator / (const BigNumber & b) const  // ////////////////
 	int i, j;  
 	BigNumber r;  
 	r.len = 0;  
-	// Ä£Äâ³ı·¨µÄ¹ı³Ì  
-	// ÏÈÈ¡blen - 1Î»  
+	// æ¨¡æ‹Ÿé™¤æ³•çš„è¿‡ç¨‹  
+	// å…ˆå–blen - 1ä½  
 	BigNumber temp = this->getSub(b.len - 1);  
-	// Ò»Î»Ò»Î»µÄ³ı´Ó¶øÈ¡µÃÍêÕûµÄ´ğ°¸  
+	// ä¸€ä½ä¸€ä½çš„é™¤ä»è€Œå–å¾—å®Œæ•´çš„ç­”æ¡ˆ  
 	for (i = len - b.len; i >= 0; i--)   
 	{  
-		// tempÓÃÀ´´æ´¢±»³ıÊıµÄÇ°blenÎ»¡£  
+		// tempç”¨æ¥å­˜å‚¨è¢«é™¤æ•°çš„å‰blenä½ã€‚  
 		temp = temp * 10 + s[i];  
-		// Èç¹ûtemp < bÔòÔÙÔÚ¸ÃÎ»µÄ½á¹ûÎª0  
+		// å¦‚æœtemp < båˆ™å†åœ¨è¯¥ä½çš„ç»“æœä¸º0  
 		if (temp < b) 
 		{  
 			r.s[r.len++] = 0;  
 		} 
 		else 
 		{  
-			// ·ñÔòÕÒµ½µÚÒ»¸öjÊ¹µÃb * jµÄ½á¹û´óÓÚ temp  
+			// å¦åˆ™æ‰¾åˆ°ç¬¬ä¸€ä¸ªjä½¿å¾—b * jçš„ç»“æœå¤§äº temp  
 			for (j = 1; j <= 10; j++) 
 			{  
 					if (b * j > temp) break;  
 			}  
-			// ÒòÎª´ËÊ±£¨j - 1£© * bĞ¡ÓÚµÈÓÚ temp£¬ËùÓĞj - 1¾ÍÊÇÔÚ¸ÃÎ»³ıµÄ½á¹û  
+			// å› ä¸ºæ­¤æ—¶ï¼ˆj - 1ï¼‰ * bå°äºç­‰äº tempï¼Œæ‰€æœ‰j - 1å°±æ˜¯åœ¨è¯¥ä½é™¤çš„ç»“æœ  
 			r.s[r.len++] = j - 1;  
-			// temp ¼õÈ¥±»¼õÈ¥²¿·ÖÎªÏÂÒ»´Îµü´ú×ö×¼±¸  
+			// temp å‡å»è¢«å‡å»éƒ¨åˆ†ä¸ºä¸‹ä¸€æ¬¡è¿­ä»£åšå‡†å¤‡  
 			temp = temp - (b * (j - 1));  
 		}  
 	}  
-	// ÄæĞò£¨ÒòÎª½á¹ûÊÇÒªÄæĞò´æ´¢µÄ£¬¶øÔÚÇó½â¹ı³ÌÖĞ½á¹ûÊÇË³Ğò´æ´¢µÄ£©  
+	// é€†åºï¼ˆå› ä¸ºç»“æœæ˜¯è¦é€†åºå­˜å‚¨çš„ï¼Œè€Œåœ¨æ±‚è§£è¿‡ç¨‹ä¸­ç»“æœæ˜¯é¡ºåºå­˜å‚¨çš„ï¼‰  
 	for (i = 0; i < r.len / 2; i++) 
 	{  
 		int temp = r.s[i];  

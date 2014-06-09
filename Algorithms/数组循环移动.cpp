@@ -1,9 +1,9 @@
-#include <cstdio>
+ï»¿#include <cstdio>
 #include <iostream>
 #include <cstring>
 using namespace std;
 
-/*´Óstartµ½endÎ»ÖÃ£¬·­×ªÊı×éelem*/
+/*ä»startåˆ°endä½ç½®ï¼Œç¿»è½¬æ•°ç»„elem*/
 void reverse(int *elem, int start , int end)
 {
 	int i;
@@ -16,14 +16,14 @@ void reverse(int *elem, int start , int end)
 }
 
 /*
-	Target:½«elemÏòÓÒÑ­»·ÒÆ¶¯disµÄ¾àÀë
-	ÉèÊı×éÎªT = ab×é³É£¬bÊÇĞèÒªÏòÓÒÒÆ¶¯µÄ¸öÊı
-	Èç¹ûÒÆ¶¯µÄdis´óÓÚÊı×éµÄ³¤¶Èn£¬Ôòdis = dis % n 
-	¶ÔÓÚT = ab£¬ ĞèÒª±ä³É T' = ba
-	ÔòT' = ba = (a'b')'
-	¼´¶Ôa·­×ª£¬¶Ôb·­×ª£¬ÔÚ¶ÔÕûÌåÊı×éelem·­×ª
-	Ëã·¨¸´ÔÓ¶È£ºO(n)
-	¿Õ¼ä¸´ÔÓ¶È£ºO(1)
+	Target:å°†elemå‘å³å¾ªç¯ç§»åŠ¨disçš„è·ç¦»
+	è®¾æ•°ç»„ä¸ºT = abç»„æˆï¼Œbæ˜¯éœ€è¦å‘å³ç§»åŠ¨çš„ä¸ªæ•°
+	å¦‚æœç§»åŠ¨çš„diså¤§äºæ•°ç»„çš„é•¿åº¦nï¼Œåˆ™dis = dis % n 
+	å¯¹äºT = abï¼Œ éœ€è¦å˜æˆ T' = ba
+	åˆ™T' = ba = (a'b')'
+	å³å¯¹aç¿»è½¬ï¼Œå¯¹bç¿»è½¬ï¼Œåœ¨å¯¹æ•´ä½“æ•°ç»„elemç¿»è½¬
+	ç®—æ³•å¤æ‚åº¦ï¼šO(n)
+	ç©ºé—´å¤æ‚åº¦ï¼šO(1)
 */ 
 void move(int *elem, int n, int dis)
 {
