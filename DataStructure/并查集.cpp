@@ -10,10 +10,11 @@ inline void unionSet(int x, int y) {
 	int fx = find(x);
 	int fy = find(y);
 	if (fx != fy) {
-		if (rank[fx] > rank[fy]) fa[fy] = fx;
-    	else {
-	       	fa[fx] = fy;
-	       	if (rank[fx] == rank[fy]) rank[fy]++;
-    	}
+		if (rank[fx] > rank[fy]) {
+			fa[fy] = fx;
+		} else {
+	       		fa[fx] = fy;
+	       		if (rank[fx] == rank[fy]) rank[fy]++;
+    		}
 	}
 }
