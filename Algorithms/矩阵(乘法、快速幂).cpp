@@ -37,9 +37,16 @@ Matrix matrixMul(const Matrix &a, const Matrix &b) {
 	return c;
 }
 
+/*
+使用矩阵快速幂例如构造 Fibonacci序列, 
+P * I^n 
+fn   fn-1  1 1   
+fn-1 fn-2  1 0 
+若P(1,1)为fn, P*I^n 的(1,1)为f2n
+*/
+
 //矩阵快速幂求解 m^n % MOD
-Matrix quickPow(Matrix m, int64 n)
-{
+Matrix quickPow(Matrix m, int64 n) {
 	Matrix ans = I2;
 	//快速幂
 	assert(n >= 0);
